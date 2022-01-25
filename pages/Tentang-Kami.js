@@ -1,19 +1,20 @@
 import LayoutSlider from "../component/Main-Layout-Slider";
 import prisma from '../client.ts'
+import Script from 'next/script'
 
 export async function getServerSideProps(context) {
-  const daftarSlider = await prisma.slider.findMany({
-    where: { kategoriSlider: "Beranda", statusSlider: "On" },
-  });
-  return { props: { daftarSlider } }
+    const daftarSlider = await prisma.slider.findMany({
+        where: { kategoriSlider: "Beranda", statusSlider: "On" },
+    });
+    return { props: { daftarSlider } }
 }
 
-const About = ({daftarSlider}) => {
+const About = ({ daftarSlider }) => {
     return (
         <>
             <link rel="stylesheet" href="/css/Tentang-Kami.css" media="screen" />
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></Script>
+            <Script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></Script>
             <LayoutSlider
                 childrenSlider=
                 {daftarSlider.map((slider) => (
@@ -45,7 +46,7 @@ const About = ({daftarSlider}) => {
                                     </div>
                                     <div className="u-align-center u-container-style u-layout-cell u-size-38 u-layout-cell-2">
                                         <div className="u-container-layout u-container-layout-2">
-                                            <p className="u-custom-font u-font-lato u-text u-text-2">Merupakan sebuah StartUp yang bergerak dibidang Hijab Fashion. Kami menyediakan berbagai jenis hijab sesuai dengan kebutuhan wanita muslimah dan memberikan pelayanan serta pelayanan yang baik dan cepat​&nbsp;</p>
+                                            <p className="u-custom-font u-font-lato u-text u-text-2">Merupakan sebuah StartUp yang bergerak dibidang Hijab Fashion. Kami menyediakan berbagai jenis hijab sesuai dengan kebutuhan wanita muslimah dan memberikan pelayanan serta pelayanan yang baik dan cepat;</p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,17 +71,17 @@ const About = ({daftarSlider}) => {
                                     <li>
                                         <div className="u-list-icon">
                                             <i className="fas fa-check" style={{ color: "green", fontSize: "25px" }}></i>
-                                        </div>Pilih produk yang diinginkan&nbsp;
+                                        </div>Pilih produk yang diinginkan
                                     </li>
                                     <li>
                                         <div className="u-list-icon">
                                             <i className="fas fa-check" style={{ color: "green", fontSize: "25px" }}></i>
-                                        </div>Pilih "Detail Produk"
+                                        </div>Pilih Detail Produk
                                     </li>
                                     <li>
                                         <div className="u-list-icon">
                                             <i className="fas fa-check" style={{ color: "green", fontSize: "25px" }}></i>
-                                        </div>Pilih "Pesan Sekarang"
+                                        </div>Pilih Pesan Sekarang
                                     </li>
                                     <li>
                                         <div className="u-list-icon">

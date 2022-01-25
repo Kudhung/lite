@@ -26,7 +26,7 @@ const ListSale = (props) => (
     </div>
       <div className="u-custom-font u-font-lato u-product-control u-product-price u-product-price-1">
         <div className="u-price-wrapper u-spacing-10">
-          <div className="u-old-price" style={{ fontSize: "1rem", textDecoration: "line-through !important" }}>
+          <div className="u-old-price" style={{ fontSize: "1rem", textDecoration: "line-through " }}>
             {props.hargaProduk}
           </div>
           <div className="u-price u-text-palette-2-base" style={{ fontSize: "1.10rem", fontWeight: "700" }}>
@@ -188,8 +188,8 @@ const Sale = ({ daftarSlider, daftarProduk, daftarKategori, daftarSale }) => {
                   <table id="myTable">
                     <tbody className="header" style={{ height: "250px", display: "block", overflowX: "hidden", scrollBehavior: "auto" }}>
                       {filteredKategori.map((kategori) => (
-                        <tr key={kategori.idKtg}>
-                          <td>
+                        <tr key={kategori.idKtg} className="hover-search">
+                          <td >
                             <Link href="/Search/[idList]" as={`/Search/${kategori.jenisKtg}`}>
                               <a>{kategori.jenisKtg}</a>
                             </Link>
@@ -198,7 +198,7 @@ const Sale = ({ daftarSlider, daftarProduk, daftarKategori, daftarSale }) => {
                       )
                       )}
                       {filteredProducts.map((product) => (
-                        <tr key={product.idProduk}>
+                        <tr key={product.idProduk} className="hover-search">
                           <td>
                             <Link href="/Produk/Deskripsi/[namaProduk]" as={`/Produk/Deskripsi/${product.namaProduk}`}>
                               <a>{product.namaProduk}</a>

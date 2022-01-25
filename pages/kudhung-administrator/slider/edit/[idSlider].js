@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form'
 import prisma from '../../../../client.ts'
 
 export async function getServerSideProps(context) {
-    const daftarKategori = await prisma.kategori.findMany();
     const daftarSlider = await prisma.slider.findMany();
     let kode = context.params.idSlider;
     let data = await prisma.slider.findUnique({
@@ -13,7 +12,7 @@ export async function getServerSideProps(context) {
     });
 
     let { idSlider, gambarSlider, keteranganSlider, periodeSlider, statusSlider,  kategoriSlider } = data;
-    return { props: { idSlider, gambarSlider, keteranganSlider, periodeSlider, statusSlider, kategoriSlider, daftarKategori, daftarSlider } };
+    return { props: { idSlider, gambarSlider, keteranganSlider, periodeSlider, statusSlider, kategoriSlider,  daftarSlider } };
 }
 
 const Form = (props) => {
@@ -94,9 +93,7 @@ const Form = (props) => {
                                 <option value="Beranda">1. Beranda</option>
                                 <option value="Sale">2. Sale</option>
                                 <option value="Bundling">3. Bundling</option>
-                                {props.daftarKategori.map((kategori, i = 1) => (
-                                    <option value={kategori.jenisKtg} key={kategori.idKtg}>{i + 4}. {kategori.jenisKtg}</option>
-                                ))}
+                                <option value="Produk">4. Produk</option>
                             </select>
                         </div>
                         <div  style={{ marginTop: "3%" }} className="u-form-group u-form-select u-form-group-8">
@@ -191,7 +188,6 @@ const EditSlider = (props) => {
                     statusSlider={statusSlider} setStatusSlider={setStatusSlider}
                     kategoriSlider={kategoriSlider} setKategoriSlider={setKategoriSlider}
 
-                    daftarKategori={props.daftarKategori}
                     gmbrstring={gmbrstring}
                     handleFileInputChange={handleFileInputChange}
                     onClick={async (data) => {

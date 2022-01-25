@@ -2,6 +2,7 @@ import Link from 'next/link'
 import prisma from '../../client.ts'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
+import Script from "next/script";
 
 export async function getServerSideProps(context) {
   const daftarKategori = await prisma.kategori.findMany();
@@ -33,7 +34,7 @@ const FormKategoriProduk = (props) => {
         </div>
       </div>
 
-      <div className="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form u-white" style={{ padding: "10px" }}>
+      <div className="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form u-white" style={{ padding: "15px 10px 10px 10px" }}>
         <div className="u-form-group u-form-name space">
           <input
             {...register('jenisKtg', { required: true })}
@@ -150,6 +151,8 @@ const AdminHome = (props) => {
   return (
     <>
       <div className="u-body">
+        <Script className="u-script" type="text/javascript" src="/js/jquery.js"></Script>
+        <Script className="u-script" type="text/javascript" src="/js/nicepage.js" ></Script>
         <link rel="stylesheet" href="/css/Admin.css" media="screen" />
         <header className="u-align-center u-clearfix u-header u-header" id="sec-dce1"><div className="u-clearfix u-sheet u-sheet-1">
           <a href="Beranda.html" data-page-id="488405423" className="u-align-center u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Beranda">
@@ -381,7 +384,7 @@ const AdminHome = (props) => {
                           <tr style={{ height: "46px" }}>
                             <th className="u-align-center u-table-cell u-table-cell-28">No.</th>
                             <th className="u-align-center u-table-cell u-table-cell-29">Gambar</th>
-                            <th className="u-align-center u-table-cell u-table-cell-30">Nama Produk</th>
+                            <th className="u-align-center u-table-cell u-table-cell-30">Deskripsi</th>
                             <th className="u-align-center u-table-cell u-table-cell-31">Harga</th>
                             <th className="u-align-center u-table-cell u-table-cell-32">Aksi</th>
                           </tr>
@@ -396,9 +399,9 @@ const AdminHome = (props) => {
                                   <img src={bundling.gambar2Bundling} style={{ width: "150px", height: "150px", marginLeft: "2%" }} alt="" />
                                 </span>
                                 <br />
-                                <div style={{ textAlign: "justify" }}><label>{bundling.DeskripsiBundling}</label></div >
+                                <div style={{ textAlign: "justify" }}><label>Nama Bundling : <b>{bundling.namaBundling}</b></label></div >
                               </td>
-                              <td className="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">{bundling.namaBundling}</td>
+                              <td className="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell" style={{ textAlign: "justify" }}>{bundling.DeskripsiBundling}</td>
                               <td className="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">{bundling.hargaBundling}</td>
                               <td className="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
                                 <span className="u-icon">
@@ -628,7 +631,7 @@ const AdminHome = (props) => {
               </div>
               <div className="body" id="body">
                 <div>
-                  <img src={Gambar1} style={{ width: "100%", height: "50%", margin: "2%" }}></img>
+                  <img src={Gambar1} style={{ width: "15%", height: "15%", margin: "2%" }}></img>
                 </div>
                 <div className="grid-container">
                   <div className="item1"  >

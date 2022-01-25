@@ -173,8 +173,8 @@ const Beranda = ({ daftarSlider, daftarKategori, daftarProduk }) => {
                   <table id="myTable">
                     <tbody className="header" style={{ height: "250px", display: "block", overflowX: "hidden", scrollBehavior: "auto" }}>
                       {filteredKategori.map((kategori) => (
-                        <tr key={kategori.idKtg}>
-                          <td className="hover-search">
+                        <tr key={kategori.idKtg} className="hover-search">
+                          <td >
                             <Link href="/Search/[idList]" as={`/Search/${kategori.jenisKtg}`}>
                               <a>{kategori.jenisKtg}</a>
                             </Link>
@@ -183,8 +183,8 @@ const Beranda = ({ daftarSlider, daftarKategori, daftarProduk }) => {
                       )
                       )}
                       {filteredProducts.map((product) => (
-                        <tr key={product.idProduk}>
-                          <td className="hover-search">
+                        <tr key={product.idProduk} className="hover-search">
+                          <td>
                             <Link href="/Produk/Deskripsi/[namaProduk]" as={`/Produk/Deskripsi/${product.namaProduk}`}>
                               <a>{product.namaProduk}</a>
                             </Link>
@@ -210,10 +210,12 @@ const Beranda = ({ daftarSlider, daftarKategori, daftarProduk }) => {
               <div className="u-repeater u-repeater-1">
                 {daftarKategori.map((kategori) => (
                   <div key={kategori.idKtg} className="u-align-center u-container-style u-products-item u-repeater-item">
-                    <Kategori
-                      jenisKtg={kategori.jenisKtg}
-                      gambarKtg={kategori.gambarKtg}
-                    />
+                    <div className=" u-repeater-1">
+                      <Kategori
+                        jenisKtg={kategori.jenisKtg}
+                        gambarKtg={kategori.gambarKtg}
+                      />
+                    </div>
                   </div>
                 )
                 )

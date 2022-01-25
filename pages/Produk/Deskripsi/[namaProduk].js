@@ -10,8 +10,8 @@ export async function getServerSideProps(context) {
         where: { namaProduk: kode },
     });
 
-    let { idProduk, namaProduk, statusProduk, gambar1Produk, gambar2Produk, hargaProduk, hargaSale, deskripsiProduk, jenisKain, ukuranProduk, tepiProduk, keteranganGambar1, keteranganGambar2 } = data;
-    return { props: { idProduk, namaProduk, statusProduk, daftarProduk: daftarProduk, gambar1Produk, gambar2Produk, kode, hargaProduk, hargaSale, deskripsiProduk, jenisKain, ukuranProduk, tepiProduk, keteranganGambar1, keteranganGambar2 } };
+    let { idProduk, namaProduk, statusProduk, gambar1Produk, gambar2Produk, hargaProduk, hargaSale, deskripsiProduk, jenisKain, ukuranProduk, tepiProduk, keteranganGambar1, keteranganGambar2, kategoriProduk } = data;
+    return { props: { idProduk, namaProduk, statusProduk, daftarProduk: daftarProduk, gambar1Produk, gambar2Produk, kode, hargaProduk, hargaSale, deskripsiProduk, jenisKain, ukuranProduk, tepiProduk, keteranganGambar1, keteranganGambar2, kategoriProduk } };
 }
 
 const DeskripsiProduk = (props) => {
@@ -74,17 +74,43 @@ const DeskripsiProduk = (props) => {
                         {props.hargaSale}
                     </div>
                 </div>
-                <div className="u-price " style={{ textDecoration: "line-through !important" }}>
+                <div className="u-price " style={{ textDecoration: "line-through " }}>
                     {props.hargaProduk}
                 </div>
             </div>
         )
     }
 
+    let spesifikasi;
+    if (props.kategoriProduk == "Accessories") {
+        spesifikasi = false
+    } else {
+        spesifikasi = (
+            <>
+                <tr>
+                    <th>Ukuran</th>
+                    <th>:</th>
+                    <th>{props.ukuranProduk}</th>
+                </tr>
+                <tr>
+                    <th>Jenis Kain</th>
+                    <th>:</th>
+                    <th>{props.jenisKain}</th>
+                </tr>
+                <tr>
+                    <th>Jenis Tepi</th>
+                    <th>:</th>
+                    <th>{props.tepiProduk}</th>
+                </tr>
+            </>
+        )
+    }
+
+
     const Pesan = () => {
         /* Whatsapp Window Open */
         if (props.statusProduk == "Sale") {
-            window.open('https://web.whatsapp.com/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
+            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
@@ -92,8 +118,19 @@ const DeskripsiProduk = (props) => {
                 '*Email Aktif : ' + '%0A' +
                 '*Jumlah Barang : ');
         }
+        else if (props.kategoriProduk == "Accessories") {
+            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+                '*' + 'Isi Form Penerima' + '*' + '%0A' +
+                '*Name : ' + '%0A' +
+                '*No Telp : ' + '%0A' +
+                '*Alamat : ' + '%0A' +
+                '*Email Aktif : ' + '%0A' +
+                '*Type Aksesoris : ' + '%0A' +
+                '*Jumlah Barang : ');
+
+        }
         else {
-            window.open('https://web.whatsapp.com/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
@@ -179,21 +216,7 @@ const DeskripsiProduk = (props) => {
                                     </div>
                                     <table className="u-align-left u-custom-font u-font-lato u-product-control u-product-desc u-text u-text-3 tabel-deskripsi">
                                         <tbody>
-                                            <tr>
-                                                <th>Ukuran</th>
-                                                <th>:</th>
-                                                <th>{props.ukuranProduk}</th>
-                                            </tr>
-                                            <tr>
-                                                <th>Jenis Kain</th>
-                                                <th>:</th>
-                                                <th>{props.jenisKain}</th>
-                                            </tr>
-                                            <tr>
-                                                <th>Jenis Tepi</th>
-                                                <th>:</th>
-                                                <th>{props.tepiProduk}</th>
-                                            </tr>
+                                            {spesifikasi}
                                         </tbody>
                                     </table>
                                     <button
@@ -256,7 +279,7 @@ const DeskripsiProduk = (props) => {
                                         <div className=" u-white u-repeater-item-1 u-container-layout u-similar-container u-container-layout-1" hidden={hiddenList} key={terkait.idProduk} >
                                             <img alt="" className="u-align-center u-image u-image-default u-product-control u-image-1" src={terkait.gambar1Produk} />
                                             {/* <h4 className="u-product-control u-text u-text-2"> */}
-                                            <label className="u-product-title-link" style={{textAlign:"justify"}} >
+                                            <label className="u-product-title-link" style={{ textAlign: "justify" }} >
                                                 {terkait.namaProduk}
                                             </label>
                                             {/* </h4> */}

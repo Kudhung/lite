@@ -5,12 +5,10 @@ import { useForm } from 'react-hook-form'
 import prisma from '../../../client.ts'
 
 export async function getServerSideProps(context) {
-    const daftarKategori = await prisma.kategori.findMany();
     const daftarSlider = await prisma.slider.findMany();
 
     return {
         props: {
-            daftarKategori: daftarKategori,
             daftarSlider: daftarSlider
         }
     }
@@ -89,9 +87,7 @@ const Form = (props) => {
                                 <option value="Beranda">1. Beranda</option>
                                 <option value="Sale">2. Sale</option>
                                 <option value="Bundling">3. Bundling</option>
-                                {props.daftarKategori.map((kategori, i = 1) => (
-                                    <option value={kategori.jenisKtg} key={kategori.idKtg}>{i + 4}. {kategori.jenisKtg}</option>
-                                ))}
+                                <option value="Produk">4. Produk</option>
                             </select>
                         </div>
                         <div style={{ marginTop: "3%" }} className="u-form-group u-form-select u-form-group-8">
@@ -174,7 +170,6 @@ const CreateSlider = (props) => {
             <LayoutAdmin>
                 <link rel="stylesheet" href="/css/Edit-Slider.css" media="screen" />
                 <Form
-                    daftarKategori={props.daftarKategori}
                     gmbrstring={gmbrstring}
                     handleFileInputChange={handleFileInputChange}
                     onClick={async (data) => {

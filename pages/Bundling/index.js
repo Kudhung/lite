@@ -3,13 +3,12 @@ import Link from 'next/link'
 import { useState, useCallback, useRef, useEffect } from "react";
 import prisma from '../../client.ts'
 
-
 export async function getServerSideProps(context) {
   const daftarKategori = await prisma.kategori.findMany();
   const daftarProduk = await prisma.produk.findMany();
   const daftarBundling = await prisma.bundling.findMany();
   const daftarSlider = await prisma.slider.findMany({
-    where:{ kategoriSlider:"Bundling" , statusSlider:"On" },
+    where: { kategoriSlider: "Bundling", statusSlider: "On" },
   });
   return { props: { daftarProduk, daftarKategori, daftarBundling, daftarSlider } };
 }
@@ -18,28 +17,26 @@ const ListBundling = (props) => (
   <div className="u-container-layout u-similar-container u-valign-top u-container-layout-1">
     <img alt="" className="u-expanded-width u-image u-image-default u-product-control u-image-1"
       src={props.gambar1Bundling} />
-    <h4 className="u-align-center u-product-control u-text u-text-2">
-        <label className="u-product-title-link">
-          {props.namaBundling}
-        </label>
-    </h4>
+    <div className="u-align-center u-custom-font u-font-lato u-product-control u-text u-text-2 u-product-title-link">
+      {props.namaBundling}
+    </div>
     <div className="u-product-control u-product-price u-product-price-1">
       <div className="u-price-wrapper u-spacing-10">
-        <div className="u-price u-text-palette-2-base" style={{ fontSize: "1.25rem", fontWeight: "700", marginLeft:"0%" }}>
+        <div className="u-price u-text-palette-2-base" style={{ fontSize: "1.25rem", fontWeight: "700", marginLeft: "0%" }}>
           {props.hargaBundling}
         </div>
       </div>
     </div>
-      <Link href="/Bundling/Deskripsi/[namaBundling]" as={`/Bundling/Deskripsi/${props.namaBundling}`}>
-    <a 
-      className="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-product-control u-text-body-color u-btn-1">
-      Detail Bundling
-    </a>
-      </Link>
+    <Link href="/Bundling/Deskripsi/[namaBundling]" as={`/Bundling/Deskripsi/${props.namaBundling}`}>
+      <a
+        className="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-product-control u-text-body-color u-btn-1">
+        Detail Bundling
+      </a>
+    </Link>
   </div>
 )
 
-const Bundling = ({ daftarBundling, daftarProduk, daftarKategori,daftarSlider }) => {
+const Bundling = ({ daftarBundling, daftarProduk, daftarKategori, daftarSlider }) => {
   const searchRef = useRef(null)
   const [active, setActive] = useState(false)
   const [query, setQuery] = useState('')
@@ -146,10 +143,10 @@ const Bundling = ({ daftarBundling, daftarProduk, daftarKategori,daftarSlider })
             <div className="u-back-slide" data-image-width="500" data-image-height="500">
               <img className="u-back-image u-expanded" src={slider.gambarSlider} />
             </div>
-            {/* <div className="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
+            <div className="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
               <h3 className="u-gallery-heading">{slider.keteranganSlider}</h3>
               <p className="u-gallery-text">{slider.periodeSlider}</p>
-            </div> */}
+            </div>
           </div>
         )
         )}
@@ -170,13 +167,13 @@ const Bundling = ({ daftarBundling, daftarProduk, daftarKategori,daftarSlider })
                 </span>
               </div>
               {/* <div ref={searchRef}> */}
-                <input
-                  type="text"
-                  className="search"
-                  placeholder='Search posts'
-                  name={query}
-                  onKeyUp={e => onFocus(e.target.value)}
-                />
+              <input
+                type="text"
+                className="search"
+                placeholder='Search posts'
+                name={query}
+                onKeyUp={e => onFocus(e.target.value)}
+              />
               {/* </div> */}
               {active && results.length > 0 && (
                 <>
@@ -184,8 +181,8 @@ const Bundling = ({ daftarBundling, daftarProduk, daftarKategori,daftarSlider })
                   <table id="myTable">
                     <tbody className="header" style={{ height: "250px", display: "block", overflowX: "hidden", scrollBehavior: "auto" }}>
                       {filteredKategori.map((kategori) => (
-                        <tr key={kategori.idKtg}>
-                          <td>
+                        <tr key={kategori.idKtg} className="hover-search">
+                          <td >
                             <Link href="/Search/[idList]" as={`/Search/${kategori.jenisKtg}`}>
                               <a>{kategori.jenisKtg}</a>
                             </Link>
@@ -194,7 +191,7 @@ const Bundling = ({ daftarBundling, daftarProduk, daftarKategori,daftarSlider })
                       )
                       )}
                       {filteredProducts.map((product) => (
-                        <tr key={product.idProduk}>
+                        <tr key={product.idProduk} className="hover-search">
                           <td>
                             <Link href="/Produk/Deskripsi/[namaProduk]" as={`/Produk/Deskripsi/${product.namaProduk}`}>
                               <a>{product.namaProduk}</a>

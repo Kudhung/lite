@@ -12,7 +12,7 @@ export async function getServerSideProps(context) {
     where: { kategoriProduk: kode },
   });
   const daftarSlider = await prisma.slider.findMany({
-    where: { kategoriSlider: kode, statusSlider: "On" },
+    where: { kategoriSlider: "Produk", statusSlider: "On" },
   });
   return { props: { data, kode, daftarProduk, daftarKategori, daftarSlider } };
 }
@@ -34,7 +34,7 @@ const List = (props) => {
     produk = (
       <div className="u-custom-font u-font-lato u-product-control u-product-price u-product-price-1">
         <div className="u-price-wrapper u-spacing-10">
-          <div className="u-old-price" style={{ fontSize: "1rem", textDecoration: "line-through !important" }}>
+          <div className="u-old-price" style={{ fontSize: "1rem", textDecoration: "line-through" }}>
             {props.hargaProduk}
           </div>
           <div className="u-price u-text-palette-2-base" style={{ fontSize: "1.10rem", fontWeight: "700" }}>
@@ -170,10 +170,10 @@ const Produk = ({ daftarProduk, daftarKategori, kode, daftarSlider, data }) => {
             <div className="u-back-slide" data-image-width="500" data-image-height="500">
               <img className="u-back-image u-expanded" src={ds.gambarSlider} />
             </div>
-            {/* <div className="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
+            <div className="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
               <h3 className="u-gallery-heading">{ds.keteranganSlider}</h3>
               <p className="u-gallery-text">{ds.periodeSlider}</p>
-            </div> */}
+            </div>
           </div>
         )
         )}
@@ -209,8 +209,8 @@ const Produk = ({ daftarProduk, daftarKategori, kode, daftarSlider, data }) => {
                   <table id="myTable">
                     <tbody className="header" style={{ height: "250px", display: "block", overflowX: "hidden", scrollBehavior: "auto" }}>
                       {filteredKategori.map((kategori) => (
-                        <tr key={kategori.idKtg}>
-                          <td>
+                        <tr key={kategori.idKtg} className="hover-search">
+                          <td >
                             <Link href="/Search/[idList]" as={`/Search/${kategori.jenisKtg}`}>
                               <a>{kategori.jenisKtg}</a>
                             </Link>
@@ -219,7 +219,7 @@ const Produk = ({ daftarProduk, daftarKategori, kode, daftarSlider, data }) => {
                       )
                       )}
                       {filteredProducts.map((product) => (
-                        <tr key={product.idProduk}>
+                        <tr key={product.idProduk} className="hover-search">
                           <td>
                             <Link href="/Produk/Deskripsi/[namaProduk]" as={`/Produk/Deskripsi/${product.namaProduk}`}>
                               <a>{product.namaProduk}</a>
