@@ -33,7 +33,6 @@ const Form = (props) => {
                             <input
                                 type="text"
                                 placeholder="Masukkan Nama Bundling"
-                                id="text-8ddb"
                                 className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"
                                 {...register('namaBundling', { required: true })}
                                 value={props.namaBundling}
@@ -49,7 +48,6 @@ const Form = (props) => {
                             <input
                                 type="text"
                                 placeholder="Masukkan Harga Bundling"
-                                id="text-2398"
                                 className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3"
                                 {...register('hargaBundling', { required: true })}
                                 value={props.hargaBundling}
@@ -65,7 +63,6 @@ const Form = (props) => {
                             <textarea
                                 rows="4"
                                 cols="50"
-                                id="textarea-8259"
                                 className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-9"
                                 placeholder="Tulis Deskripsi Produk"
                                 {...register('deskripsiBundling', { required: true })}
@@ -74,21 +71,20 @@ const Form = (props) => {
                             />
                         </div>
                         <div className="u-clearfix u-form-spacing-10 u-form-horizontal u-inner-form " style={{ marginTop: "2%", marginLeft: "0%", marginRight: "-1%" }}>
-                            <div style={{ marginTop: "3%" }} className="u-form-group u-form-select u-form-group-8" style={{ width: "100%" }}>
-                                <div className=" u-white " style={{ marginRight: "1%", width:"50%" }}>
+                            <div  className="u-form-group u-form-select u-form-group-8" style={{ width: "100%", marginTop: "3%"  }}>
+                                <div className=" u-white " style={{ marginRight: "1%", width: "50%" }}>
                                     <label htmlFor="text-c8ee" className="u-label"><b>Gambar Bundling</b></label>
                                     <label htmlFor="text-c908" className="u-label" style={{ float: "left", marginLeft: "3%", marginTop: "10%" }} >Keterangan Gambar
                                     </label>
-                                    <br/>
                                     <br />
-                                    <br/>
+                                    <br />
+                                    <br />
                                     <p style={{ color: "red", fontSize: "12px", float: "left", marginLeft: "3%", marginTop: "-4%" }}>
                                         {errors.keteranganGambar1?.type === 'required' && "(Keterangan Gambar Kosong)"}
                                     </p>
                                     <input
                                         type="text"
                                         placeholder="Masukkan Keterangan Gambar"
-                                        id="text-c908"
                                         className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7"
                                         {...register('keteranganGambar1', { required: true })}
                                         value={props.keteranganGambar1}
@@ -100,30 +96,27 @@ const Form = (props) => {
                                     </p>
                                     <input
                                         type="file"
-                                        id="text-c8ee"
                                         {...register('gambar1', { required: false })}
                                         onChange={props.handleFileInputChange}
                                         className="  u-input-rectangle custom-file-input"
                                     />
-                                    <img src={props.gambar1Bundling} className="gambar-gambar"/>
+                                    <img src={props.gambar1Bundling} className="gambar-gambar" />
                                     <i className="fas fa-angle-double-right double-panah" ></i>
-                                    <img src={props.gmbrstring1} className="gambar-gambar2" />  
+                                    <img src={props.gmbrstring1} className="gambar-gambar2" />
                                 </div>
-                                <div className=" u-white " style={{ marginLeft: "1%", width:"50%" }}>
+                                <div className=" u-white " style={{ marginLeft: "1%", width: "50%" }}>
                                     <label htmlFor="text-c8ee" className="u-label"><b>Gambar Bundling</b></label>
                                     <label htmlFor="text-c908" className="u-label" style={{ float: "left", marginLeft: "3%", marginTop: "10%" }} >Keterangan Gambar
                                     </label>
-                                    <br/>
                                     <br />
                                     <br />
-                                    <p  style={{ color: "red", fontSize: "12px", float: "left", marginLeft: "3%", marginTop: "-4%" }}>
+                                    <br />
+                                    <p style={{ color: "red", fontSize: "12px", float: "left", marginLeft: "3%", marginTop: "-4%" }}>
                                         {errors.keteranganGambar2?.type === 'required' && "(Keterangan Gambar Kosong)"}
                                     </p>
                                     <input
                                         type="text"
                                         placeholder="Masukkan Keterangan Gambar"
-                                        id="text-c908"
-                                        name="text-6"
                                         className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7"
                                         {...register('keteranganGambar2', { required: true })}
                                         value={props.keteranganGambar2}
@@ -135,12 +128,11 @@ const Form = (props) => {
                                     </p>
                                     <input
                                         type="file"
-                                        id="text-c8ee"
                                         {...register('gambar2', { required: false })}
                                         onChange={props.handleFileInputChange2}
                                         className=" u-input-rectangle custom-file-input"
                                     />
-                                    <img src={props.gambar2Bundling} className="gambar-gambar"/>
+                                    <img src={props.gambar2Bundling} className="gambar-gambar" />
                                     <i className="fas fa-angle-double-right double-panah" ></i>
                                     <img src={props.gmbrstring2} className="gambar-gambar2" />
                                 </div>
