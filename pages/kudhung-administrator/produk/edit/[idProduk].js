@@ -143,7 +143,7 @@ const Form = (props) => {
                                     <option value="200 cm X 150 cm (Syar&apos;i)">4. 200 cm X 150 cm (Syar&apos;i)</option>
                                     <option value="30 cm X 150 cm">5. 30 cm X 150 cm </option>
                                     <option value="180 cm X 70 cm">6. 180 cm X 70 cm </option>
-                                    <option value="180 cm X 75 cm">7. 180 cm X 75 cm </option>
+                                    <option value="180 cm X 75 cm">6. 180 cm X 75 cm </option>
                                 </optgroup>
                                 <optgroup label="Segiempat">
                                     <option value="115 cm X 115 cm (Standart)">1. 115 cm X 115 cm (Standart)</option>
