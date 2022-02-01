@@ -70,32 +70,36 @@ const LayoutSlider = (props) => (
                 <div className="u-custom-menu u-nav-container" style={{ marginTop: "-100px" }}>
                     <ul className="u-custom-font u-nav u-unstyled u-nav-1 nav-respon">
                         <li className="u-nav-item">
-                            <Link href="/">
-                                <a
-                                    className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base li-respon-2"
-                                    href="/" style={{ padding: "16px 99px" }}><i className="fas fa-home li-respon-2" style={{ marginRight: "5px" }}></i>Beranda</a>
-                            </Link>
+                            {/* <Link href="/"> */}
+                            <a
+                                href="/"
+                                className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base li-respon-2"
+                                href="/" style={{ padding: "16px 99px" }}><i className="fas fa-home li-respon-2" style={{ marginRight: "5px" }}></i>Beranda</a>
+                            {/* </Link> */}
                         </li>
                         <li className="u-nav-item">
-                            <Link href="/Sale">
-                                <a
-                                    className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base i-respon-2"
-                                    style={{ padding: "16px 99px" }}><i className="fas fa-tags li-respon-2" style={{ marginRight: "5px" }}></i>Sale</a>
-                            </Link>
+                            {/* <Link href="/Sale"> */}
+                            <a
+                                href="/Sale"
+                                className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base i-respon-2"
+                                style={{ padding: "16px 99px" }}><i className="fas fa-tags li-respon-2" style={{ marginRight: "5px" }}></i>Sale</a>
+                            {/* </Link> */}
                         </li>
                         <li className="u-nav-item">
-                            <Link href="/Bundling">
-                                <a
-                                    className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base "
-                                    style={{ padding: "16px 99px" }}><i className="fas fa-box-open li-respon-2" style={{ marginRight: "5px" }}></i>Bundling</a>
-                            </Link>
+                            {/* <Link href="/Bundling"> */}
+                            <a
+                                href="/Bundling"
+                                className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base "
+                                style={{ padding: "16px 99px" }}><i className="fas fa-box-open li-respon-2" style={{ marginRight: "5px" }}></i>Bundling</a>
+                            {/* </Link> */}
                         </li>
                         <li className="u-nav-item">
-                            <Link href="/Tentang-Kami">
-                                <a
-                                    className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base li-respon-2"
-                                    style={{ padding: "16px 99px" }}><i className="fas fa-info-circle li-respon-2" style={{ marginRight: "5px" }}></i>Tentang Kami</a>
-                            </Link>
+                            {/* <Link href="/Tentang-Kami"> */}
+                            <a
+                                href="/Tentang-Kami"
+                                className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base li-respon-2"
+                                style={{ padding: "16px 99px" }}><i className="fas fa-info-circle li-respon-2" style={{ marginRight: "5px" }}></i>Tentang Kami</a>
+                            {/* </Link> */}
                         </li>
                     </ul>
                 </div>
@@ -107,28 +111,36 @@ const LayoutSlider = (props) => (
                             <div className="u-menu-close"><i className="fas fa-times" style={{ fontSize: "35px", cursor: "pointer" }}></i></div>
                             <ul className=" u-nav u-popupmenu-items u-unstyled u-nav-2">
                                 <li className="u-nav-item">
-                                    <Link href="/">
-                                        <a className="u-button-style u-nav-link"
-                                            style={{ padding: "16px 99px" }}><i className="fas fa-home" style={{ marginRight: "5px" }}></i>Beranda</a>
-                                    </Link>
+                                    {/* <Link href="/"> */}
+                                    <a
+                                        href="/"
+                                        className="u-button-style u-nav-link"
+                                        style={{ padding: "16px 99px" }}><i className="fas fa-home" style={{ marginRight: "5px" }}></i>Beranda</a>
+                                    {/* </Link> */}
                                 </li>
                                 <li className="u-nav-item">
-                                    <Link href="/Sale">
-                                        <a className="u-button-style u-nav-link"
-                                            style={{ padding: "16px 99px" }}><i className="fas fa-tags" style={{ marginRight: "5px" }}></i>Sale</a>
-                                    </Link>
+                                    {/* <Link href="/Sale"> */}
+                                    <a
+                                        href="/Sale"
+                                        className="u-button-style u-nav-link"
+                                        style={{ padding: "16px 99px" }}><i className="fas fa-tags" style={{ marginRight: "5px" }}></i>Sale</a>
+                                    {/* </Link> */}
                                 </li>
                                 <li className="u-nav-item">
-                                    <Link href="/Bundling">
-                                        <a className="u-button-style u-nav-link" href="/Bundling"
-                                            style={{ padding: "16px 99px" }}><i className="fas fa-box-open" style={{ marginRight: "5px" }}></i>Bundling</a>
-                                    </Link>
+                                    {/* <Link href="/Bundling"> */}
+                                    <a
+                                        href="/Bundling"
+                                        className="u-button-style u-nav-link" href="/Bundling"
+                                        style={{ padding: "16px 99px" }}><i className="fas fa-box-open" style={{ marginRight: "5px" }}></i>Bundling</a>
+                                    {/* </Link> */}
                                 </li>
                                 <li className="u-nav-item">
-                                    <Link href="/Bundling">
-                                        <a className="u-button-style u-nav-link"
-                                            style={{ padding: "16px 99px" }}><i className="fas fa-info-circle" style={{ marginRight: "5px" }}></i>Tentang Kami</a>
-                                    </Link>
+                                    {/* <Link href="/Bundling"> */}
+                                    <a
+                                        href="/Bundling"
+                                        className="u-button-style u-nav-link"
+                                        style={{ padding: "16px 99px" }}><i className="fas fa-info-circle" style={{ marginRight: "5px" }}></i>Tentang Kami</a>
+                                    {/* </Link> */}
                                 </li>
                             </ul>
                         </div>
