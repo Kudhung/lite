@@ -78,12 +78,12 @@ const LayoutSlider = (props) => (
                             {/* </Link> */}
                         </li>
                         <li className="u-nav-item">
-                            {/* <Link href="/Sale"> */}
-                            <a
-                                href="/Sale"
-                                className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base i-respon-2"
-                                style={{ padding: "16px 99px" }}><i className="fas fa-tags li-respon-2" style={{ marginRight: "5px" }}></i>Sale</a>
-                            {/* </Link> */}
+                            <Link href="/Sale">
+                                <a
+                                    href="/Sale"
+                                    className="u-button-style u-custom-color-1 u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base i-respon-2"
+                                    style={{ padding: "16px 99px" }}><i className="fas fa-tags li-respon-2" style={{ marginRight: "5px" }}></i>Sale</a>
+                            </Link>
                         </li>
                         <li className="u-nav-item">
                             {/* <Link href="/Bundling"> */}
@@ -119,12 +119,12 @@ const LayoutSlider = (props) => (
                                     {/* </Link> */}
                                 </li>
                                 <li className="u-nav-item">
-                                    {/* <Link href="/Sale"> */}
-                                    <a
-                                        href="/Sale"
-                                        className="u-button-style u-nav-link"
-                                        style={{ padding: "16px 99px" }}><i className="fas fa-tags" style={{ marginRight: "5px" }}></i>Sale</a>
-                                    {/* </Link> */}
+                                    <Link href="/Sale">
+                                        <a
+                                            href="/Sale"
+                                            className="u-button-style u-nav-link"
+                                            style={{ padding: "16px 99px" }}><i className="fas fa-tags" style={{ marginRight: "5px" }}></i>Sale</a>
+                                    </Link>
                                 </li>
                                 <li className="u-nav-item">
                                     {/* <Link href="/Bundling"> */}
