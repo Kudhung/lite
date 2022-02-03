@@ -110,33 +110,62 @@ const DeskripsiProduk = (props) => {
     const Pesan = () => {
         /* Whatsapp Window Open */
         if (props.statusProduk == "Sale") {
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
+            window.open(
+                'https://wa.me/6281355538777?text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
                 '*Alamat : ' + '%0A' +
                 '*Email Aktif : ' + '%0A' +
-                '*Jumlah Barang : ');
+                '*Jumlah Barang : '
+                // 'https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
+                // '*' + 'Isi Form Penerima' + '*' + '%0A' +
+                // '*Name : ' + '%0A' +
+                // '*No Telp : ' + '%0A' +
+                // '*Alamat : ' + '%0A' +
+                // '*Email Aktif : ' + '%0A' +
+                // '*Jumlah Barang : '
+            );
         }
         else if (props.kategoriProduk == "Accessories") {
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+            window.open(
+                'https://wa.me/6281355538777?text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
                 '*Alamat : ' + '%0A' +
                 '*Email Aktif : ' + '%0A' +
                 '*Type Aksesoris : ' + '%0A' +
-                '*Jumlah Barang : ');
+                '*Jumlah Barang : '
+                // 'https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+                // '*' + 'Isi Form Penerima' + '*' + '%0A' +
+                // '*Name : ' + '%0A' +
+                // '*No Telp : ' + '%0A' +
+                // '*Alamat : ' + '%0A' +
+                // '*Email Aktif : ' + '%0A' +
+                // '*Type Aksesoris : ' + '%0A' +
+                // '*Jumlah Barang : '
+            );
 
         }
         else {
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+            window.open(
+                'https://wa.me/6281355538777?text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
                 '*Alamat : ' + '%0A' +
                 '*Email Aktif : ' + '%0A' +
-                '*Jumlah Barang : ');
+                '*Jumlah Barang : '
+
+                // 'https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+                // '*' + 'Isi Form Penerima' + '*' + '%0A' +
+                // '*Name : ' + '%0A' +
+                // '*No Telp : ' + '%0A' +
+                // '*Alamat : ' + '%0A' +
+                // '*Email Aktif : ' + '%0A' +
+                // '*Jumlah Barang : '
+            );
 
         }
     };
