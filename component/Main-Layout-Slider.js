@@ -135,9 +135,9 @@ const LayoutSlider = (props) => (
                                     {/* </Link> */}
                                 </li>
                                 <li className="u-nav-item">
-                                    {/* <Link href="/Bundling"> */}
+                                    {/* <Link href="/Tentang-kami"> */}
                                     <a
-                                        href="/Bundling"
+                                        href="/Tentang-Kami"
                                         className="u-button-style u-nav-link"
                                         style={{ padding: "16px 99px" }}><i className="fas fa-info-circle" style={{ marginRight: "5px" }}></i>Tentang Kami</a>
                                     {/* </Link> */}

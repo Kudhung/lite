@@ -110,7 +110,7 @@ const DeskripsiProduk = (props) => {
     const Pesan = () => {
         /* Whatsapp Window Open */
         if (props.statusProduk == "Sale") {
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
+            window.open('https://wa.me/6283857247099?text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
@@ -119,7 +119,7 @@ const DeskripsiProduk = (props) => {
                 '*Jumlah Barang : ');
         }
         else if (props.kategoriProduk == "Accessories") {
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+            window.open('https://wa.me/6283857247099?text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
@@ -130,7 +130,7 @@ const DeskripsiProduk = (props) => {
 
         }
         else {
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
+            window.open('https://wa.me/6283857247099?text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '*' + hargaProd + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
