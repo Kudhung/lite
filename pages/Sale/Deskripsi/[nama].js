@@ -60,13 +60,22 @@ const DeskripsiProduk = (props) => {
     
     const Pesan = () => {
         /* Whatsapp Window Open */ 
-            window.open('https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
+            window.open(
+                'https://wa.me/6283857247099?text=' +'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
                 '*' + 'Isi Form Penerima' + '*' + '%0A' +
                 '*Name : ' + '%0A' +
                 '*No Telp : ' + '%0A' +
                 '*Alamat : ' + '%0A' +
                 '*Email Aktif : ' + '%0A' +
-                '*Jumlah Barang : ');
+                '*Jumlah Barang : '
+                // 'https://wa.me/send' + '?phone=' + '6283857247099' + '&text=' + 'Halo saya ingin memesan' + '%20' + namaProd + '%20' + '(' + '%20' + '~' + hargaProd + '~' + '%20' + '*' + hargaSale + '*' + '%20' + ')' + '%0A%0A' +
+                // '*' + 'Isi Form Penerima' + '*' + '%0A' +
+                // '*Name : ' + '%0A' +
+                // '*No Telp : ' + '%0A' +
+                // '*Alamat : ' + '%0A' +
+                // '*Email Aktif : ' + '%0A' +
+                // '*Jumlah Barang : '
+                );
     };
 
 
